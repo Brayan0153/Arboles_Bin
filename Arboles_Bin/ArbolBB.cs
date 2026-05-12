@@ -36,6 +36,63 @@ namespace Arboles_Bin
 
         }
 
+        //regresa true si el valor esta en el arbol
+
+
+        public bool Buscar(int v)
+        {
+            return true;
+        }
+        
+        
+        public void Preorden()
+        {
+            PreordenRecursivo(Raiz);
+            Console.WriteLine();
+        }
+
+        private void PreordenRecursivo(Nodo r)
+        {
+            if (r != null)
+            {
+                Console.Write(r + " ");   
+                PreordenRecursivo(r.izquierda);
+                PreordenRecursivo(r.derecha);
+            }
+        }
+        public void Inorden()
+        {
+            InordenRecursivo(Raiz);
+            Console.WriteLine();
+        }
+
+        private void InordenRecursivo(Nodo r)
+        {
+            if (r != null)
+            {
+                InordenRecursivo(r.izquierda);
+                Console.Write(r + " ");
+                InordenRecursivo(r.derecha);
+            }
+        }
+
+        public void Postorden()
+        {
+            PostordenRecursivo(Raiz);
+            Console.WriteLine();
+        }
+
+        private void PostordenRecursivo(Nodo r)
+        {
+            if (r != null)
+            {
+                PostordenRecursivo(r.izquierda);
+                PostordenRecursivo(r.derecha);
+                Console.Write(r + " ");
+            }
+        }
+
+
     }
 
 }
