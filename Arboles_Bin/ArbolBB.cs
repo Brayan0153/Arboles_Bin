@@ -48,14 +48,14 @@ namespace Arboles_Bin
         public void Preorden()
         {
             PreordenRecursivo(Raiz);
-            Console.WriteLine();
+            
         }
 
         private void PreordenRecursivo(Nodo r)
         {
             if (r != null)
             {
-                Console.Write(r + " ");   
+                Console.Write(r.Dato + " ");   
                 PreordenRecursivo(r.izquierda);
                 PreordenRecursivo(r.derecha);
             }
@@ -63,7 +63,7 @@ namespace Arboles_Bin
         public void Inorden()
         {
             InordenRecursivo(Raiz);
-            Console.WriteLine();
+            
         }
 
         private void InordenRecursivo(Nodo r)
@@ -71,7 +71,7 @@ namespace Arboles_Bin
             if (r != null)
             {
                 InordenRecursivo(r.izquierda);
-                Console.Write(r + " ");
+                Console.Write(r.Dato + " ");
                 InordenRecursivo(r.derecha);
             }
         }
@@ -79,7 +79,7 @@ namespace Arboles_Bin
         public void Postorden()
         {
             PostordenRecursivo(Raiz);
-            Console.WriteLine();
+            
         }
 
         private void PostordenRecursivo(Nodo r)
@@ -88,7 +88,7 @@ namespace Arboles_Bin
             {
                 PostordenRecursivo(r.izquierda);
                 PostordenRecursivo(r.derecha);
-                Console.Write(r + " ");
+                Console.Write(r.Dato + " ");
             }
         }
 
