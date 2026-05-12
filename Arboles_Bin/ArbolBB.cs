@@ -8,21 +8,34 @@ namespace Arboles_Bin
 {
     internal class ArbolBB
     {
-        public Nodo raiz;
-
+        
+        private Nodo Raiz {get;set;}
         public ArbolBB()
         {
-            raiz = null;
-
+            Raiz = null;
         }
-
-        public void insertar(int info)
+        public void Insertar(int v)
         {
+            Raiz = InsertarRecursivo(Raiz, v);
+        }
+        private Nodo InsertarRecursivo(Nodo r, int valor)
+        {
+            if (r == null)
+            {
+                return new Nodo(valor);
+            }
+            else if (valor < r.Dato)
+            {
+                r.izquierda = InsertarRecursivo(r.izquierda, valor);
+            }
+            else if (valor > r.Dato)
+            {
+                r.derecha= InsertarRecursivo(r.derecha, valor);
+            }
+            return r;
 
         }
 
-
-       
     }
 
 }

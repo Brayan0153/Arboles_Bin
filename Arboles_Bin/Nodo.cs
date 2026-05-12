@@ -8,14 +8,20 @@ namespace Arboles_Bin
 {
     internal class Nodo
     {
-        public int dato;
-        public Nodo izquierda, derecha;
+        public int Dato {  get; set; }
+        public Nodo izquierda { get; set; }
+        public Nodo derecha { get; set; }
 
-        public Nodo(int dato, Nodo izquierda, Nodo derecha)
+        public Nodo(int dato)
         {
-            this.dato = dato;
+            this.Dato = dato;
             this.izquierda = null;
             this.derecha = null;
+        }
+
+        public override string? ToString()
+        {
+            return Dato.ToString();
         }
 
     }
