@@ -38,13 +38,31 @@ namespace Arboles_Bin
 
         //regresa true si el valor esta en el arbol
 
-
         public bool Buscar(int v)
         {
-            return true;
+            return BuscarRecursivo(Raiz, v);
         }
-        
-        
+        private bool BuscarRecursivo(Nodo r, int valor)
+        {
+            if (r == null)
+            {
+                return false;
+            }
+            if (valor == r.Dato)
+            {
+                return true;
+            }
+            else if (valor < r.Dato)
+            {
+                return BuscarRecursivo(r.izquierda, valor);
+            }
+            else
+            {
+                return BuscarRecursivo(r.derecha, valor);
+            }
+        }
+
+
         public void Preorden()
         {
             PreordenRecursivo(Raiz);
